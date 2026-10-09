@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Workshop | WebLab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar dan area utama diatur dengan CSS Grid. -->
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">W</span>WebLab</a>
+      <p class="eyebrow">WORKSHOP MAHASISWA</p>
+      <h1>Mulai langkah<br>di dunia web.</h1>
+      <p class="sidebar-copy">Belajar membangun halaman web dari struktur HTML sampai tampilan CSS yang responsif.</p>
+      <nav class="step-nav" aria-label="Tahapan pendaftaran">
+        <a class="step active" href="index.html" aria-current="page"><span>01</span>Formulir pendaftaran</a>
+        <a class="step" href="detail.html"><span>02</span>Detail pendaftar</a>
+      </nav>
+      <div class="workshop-box">
+        <p class="eyebrow">MATERI WORKSHOP</p>
+        <ul><li>Struktur dan tabel HTML</li><li>Formulir dan query string</li><li>Layout Flexbox dan Grid</li></ul>
+      </div>
+      <footer class="author">
+        <p>Dibuat oleh</p>
+        <strong>Gohan Tua Jeremia Ambarita</strong>
+        <span>NIM 123140160</span>
+      </footer>
+    </aside>
+    <main id="konten" class="main-content">
+      <header class="page-heading">
+        <div><p class="eyebrow">PENDAFTARAN / LANGKAH 01</p><h2>Daftar workshop</h2></div>
+        <span class="badge">Tugas Pemrograman Web </span>
+      </header>
+      <p class="intro">Isi data diri dan pilih sesi belajar kamu. Kolom bertanda <span class="required">*</span> wajib diisi.</p>
+      <!-- GET membentuk query string; detail.html tetap berisi data dummy. -->
+      <form id="form-pendaftaran" class="card" action="detail.html" method="get">
+        <fieldset>
+          <legend><span class="section-number">01</span>Data diri</legend>
+          <div class="form-grid">
+            <div class="field full-width">
+              <label for="nama">Nama lengkap <span class="required">*</span></label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="nim">NIM <span class="required">*</span></label>
+              <input type="text" id="nim" name="nim" placeholder="Contoh: 123456789" inputmode="numeric" pattern="[0-9]{9}" maxlength="9" title="NIM harus terdiri dari 9 angka" required>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="nama@example.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="telepon">Nomor telepon</label>
+              <input type="tel" id="telepon" name="telepon" placeholder="Contoh: 08123456789" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="lahir">Tanggal lahir</label>
+              <input type="date" id="lahir" name="lahir">
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="section-number">02</span>Pilihan workshop</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="prodi">Program studi <span class="required">*</span></label>
+              <select id="prodi" name="prodi" required>
+                <option value="">Pilih program studi</option>
+                <optgroup label="Bidang Komputasi"><option value="Teknik Informatika">Teknik Informatika</option><option value="Teknik Komputer">Teknik Komputer</option></optgroup>
+              </select>
+            </div>
+            <div class="field">
+              <label for="semester">Semester <span class="required">*</span></label>
+              <input type="number" id="semester" name="semester" min="1" max="14" placeholder="1 - 14" required>
+            </div>
+            <fieldset class="choice-group full-width">
+              <legend>Pilih sesi <span class="required">*</span></legend>
+              <div class="choice-row">
+                <label class="choice" for="pagi"><input type="radio" id="pagi" name="sesi" value="Pagi" required>Pagi <span>09.00 - 11.00</span></label>
+                <label class="choice" for="siang"><input type="radio" id="siang" name="sesi" value="Siang">Siang <span>13.00 - 15.00</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="choice-group full-width">
+              <legend>Topik yang diminati</legend>
+              <div class="choice-row">
+                <label class="choice" for="html"><input type="checkbox" id="html" name="minat" value="HTML">HTML</label>
+                <label class="choice" for="css"><input type="checkbox" id="css" name="minat" value="CSS">CSS</label>
+                <label class="choice" for="layout"><input type="checkbox" id="layout" name="minat" value="Layout">Layout responsif</label>
+              </div>
+            </fieldset>
+            <div class="field full-width">
+              <label for="catatan">Catatan tambahan</label>
+              <textarea id="catatan" name="catatan" rows="3" placeholder="Ceritakan hal yang ingin kamu pelajari..." maxlength="500"></textarea>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-bottom">
+          <label class="agreement" for="persetujuan"><input type="checkbox" id="persetujuan" name="persetujuan" value="setuju" required>Saya menyetujui penggunaan data contoh untuk simulasi pendaftaran. <span class="required">*</span></label>
+          <div class="actions"><button class="button secondary" type="reset">Kosongkan</button><button class="button primary" type="submit">Lihat detail <span aria-hidden="true">&rarr;</span></button></div>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

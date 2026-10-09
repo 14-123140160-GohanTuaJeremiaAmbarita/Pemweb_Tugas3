@@ -1,0 +1,116 @@
+/* Dasar halaman dan warna yang dipakai bersama. */
+:root {
+  --ink: #172d36;
+  --muted: #5f7279;
+  --teal: #0c655b;
+  --line: #dae5e4;
+  --paper: #f3f7f6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+button, input, select, textarea { font: inherit; }
+/* Grid membagi sidebar dan konten; Flexbox menyusun isi sidebar. */
+.app-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); min-height: 100vh; }
+.sidebar { padding: 32px 28px; background: #113e39; color: #fff; display: flex; flex-direction: column; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 23px; font-weight: 700; text-decoration: none; }
+.brand-mark { width: 36px; height: 36px; display: grid; place-items: center; color: #113e39; background: #d5ef97; border-radius: 10px; font-size: 22px; }
+.eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; }
+.sidebar > .eyebrow { color: #b8d5cb; margin-top: 18px; }
+h1 { font-size: 35px; line-height: 1.2; letter-spacing: -1px; }
+.sidebar-copy { color: #c2d9d1; line-height: 1.8; }
+.step-nav { display: flex; flex-direction: column; gap: 10px; }
+.step { display: flex; gap: 12px; align-items: center; padding: 13px 12px; border-radius: 10px; text-decoration: none; color: #cfddd9; }
+.step span { font-size: 11px; font-weight: 700; }
+.step:hover { background: #204f48; }
+.step.active { color: #193e2f; background: #d5ef97; font-weight: 700; }
+.workshop-box { padding: 18px; border: 1px solid #41655f; border-radius: 12px; }
+.workshop-box ul { padding-left: 18px; margin: 12px 0 0; color: #c2d9d1; font-size: 12px; line-height: 2; }
+.author { margin-top: auto; padding-top: 26px; font-size: 12px; }
+.author p, .author span { display: block; color: #b8d5cb; }
+.author strong { display: block; margin: 6px 0; font-size: 12px; }
+/* Judul halaman dan kartu utama. */
+.main-content { width: 100%; max-width: 1020px; margin: 0 auto; padding: 34px 42px; min-width: 0; }
+.page-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.page-heading .eyebrow { color: var(--teal); margin-bottom: 6px; }
+h2 { font-size: 32px; letter-spacing: -0.8px; }
+.badge { padding: 7px 12px; background: #e2eeea; color: #226357; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.intro { color: var(--muted); margin: 12px 0 22px; }
+.required { color: #b33c32; }
+.card { padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 24px #163b3410; }
+/* Form, label, input dan pengelompokan pilihan. */
+fieldset { padding: 0; margin: 0 0 24px; border: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: 14px; font-size: 16px; font-weight: 700; }
+.section-number { margin-right: 10px; color: var(--teal); font-size: 12px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.full-width { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label, .choice-group legend { font-size: 12px; font-weight: 700; }
+.field input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #c9d8d5; border-radius: 8px; background: #fff; color: var(--ink); }
+.field input::placeholder, textarea::placeholder { color: #77898d; }
+textarea { resize: vertical; min-height: 76px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #348777; outline-offset: 2px; }
+.choice-group { margin: 0; }
+.choice-group legend { margin-bottom: 8px; }
+.choice-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.choice { display: flex; align-items: center; gap: 7px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 12px; cursor: pointer; }
+.choice span { color: var(--muted); font-size: 11px; }
+input[type="radio"], input[type="checkbox"] { accent-color: var(--teal); width: 16px; height: 16px; margin: 0; flex-shrink: 0; }
+#form-pendaftaran .form-bottom { border-top: 1px solid var(--line); padding-top: 18px; }
+.agreement { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--muted); }
+.agreement input { margin-top: 2px; }
+.actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 11px 18px; border: 1px solid transparent; border-radius: 8px; font-weight: 700; font-size: 12px; text-decoration: none; cursor: pointer; }
+.primary { background: var(--teal); color: #fff; }
+.primary:hover { background: #084b43; }
+.secondary { background: #fff; border-color: #c9d8d5; color: var(--ink); }
+.secondary:hover { background: var(--paper); }
+a:focus-visible, button:focus-visible, .table-scroll:focus-visible { outline: 2px solid #348777; outline-offset: 3px; }
+.page-note { margin-top: 16px; color: var(--muted); font-size: 11px; }
+/* Profil dan tabel data dummy di halaman detail. */
+.profile-summary { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.avatar { width: 52px; height: 52px; flex-shrink: 0; display: grid; place-items: center; border-radius: 14px; background: #e2eeea; color: var(--teal); font-size: 18px; font-weight: 700; }
+.profile-summary .eyebrow { color: var(--teal); margin-bottom: 4px; }
+h3 { font-size: 18px; }
+.muted { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.status { margin-left: auto; padding: 6px 10px; background: #edf5da; color: #4d651f; border-radius: 16px; font-size: 10px; white-space: nowrap; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.detail-table { width: 100%; min-width: 490px; border-collapse: collapse; font-size: 12px; text-align: left; }
+caption { padding: 14px; text-align: left; font-weight: 700; background: #f3f7f6; }
+th, td { padding: 13px 14px; border: 1px solid var(--line); vertical-align: middle; }
+thead th { background: #e2eeea; color: #29534a; font-size: 11px; }
+tbody th[scope="rowgroup"] { width: 18%; background: #f1f6f4; color: var(--teal); }
+tbody th[scope="row"] { width: 28%; font-weight: 600; }
+tbody tr:nth-child(even) { background: #f8faf9; }
+tbody tr:hover { background: #edf6f2; }
+tfoot { background: #e2eeea; }
+.detail-note { margin-top: 20px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+/* Pada tablet dan ponsel, kolom disusun ulang tanpa JS. */
+@media (max-width: 1050px) {
+  .app-layout { grid-template-columns: 250px minmax(0, 1fr); }
+  .sidebar { padding: 28px 22px; }
+  .main-content { padding: 30px 24px; }
+  .card { padding: 22px; }
+  .profile-summary { flex-wrap: wrap; }
+  .status { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  .app-layout { grid-template-columns: 1fr; }
+  .sidebar { padding: 22px; gap: 16px; }
+  .sidebar > .eyebrow, .sidebar h1, .sidebar-copy, .workshop-box { display: none; }
+  .step-nav { flex-direction: row; flex-wrap: wrap; }
+  .step { flex: 1 1 140px; font-size: 12px; padding: 11px; }
+  .author { padding-top: 0; margin-top: 0; }
+  .author p { display: none; }
+  .main-content { padding: 24px 16px; }
+  .page-heading { align-items: flex-start; }
+  h2 { font-size: 25px; }
+  .card { padding: 18px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .choice-row { gap: 8px; }
+  .choice { flex-wrap: wrap; }
+  .profile-summary { gap: 12px; }
+  .profile-summary h3 { font-size: 16px; }
+  .badge { padding: 6px 8px; font-size: 10px; }
+}
